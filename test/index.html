@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link href="index.scss" rel="stylesheet">
+
+</head>
+<body>
+
+    
+    <main>
+
+        <div class="card">
+
+            <div class="card-inner">
+                    
+                <p class="bank"><span>Multiverse</span>Royal Bank</p>
+
+                <div class="chip"></div>
+                
+                <p class="nr">5412 7501 2345 0987</p>
+                
+                <p class="valid">
+                    <span>valid thru</span>
+                    <span>12/30</span>
+                </p>
+
+                <p class="name">Rick Sanchez</p>
+
+                <div class="logo">
+                    <span>mastercard</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../src/index.js"></script>
+    
+    <script>
+    const fn = shiny.default;
+
+    fn('.card', {
+        type: 'background',
+        gradient: {
+            type: 'radial',
+            flip: {
+                x: true
+            },
+            colors: [
+                [0, '#3c3f43', .1],
+                [.25, '#cdddf3', .1],
+                [1, '#cdddf3', .85]
+            ]
+        },
+        pattern: {
+            type: 'noise',
+            opacity: .25
+        }
+    });
+
+    fn('.name, .nr, .valid > span:last-of-type', {
+        type: 'text',
+        gradient: {
+            type: 'linear',
+            angle: '110deg',
+            flip: {
+                x: true
+            },
+            colors: [
+                [.25, '#fff6db', 0],
+                [.3, '#fff', .9],
+                [.325, '#767d88', .25],
+                [.45, '#fff', .75],
+                [.75, 'cdddf3', 0]
+            ]
+        },
+    })
+
+    fn('.chip', {
+        type: 'background',
+        gradient: {
+            type: 'radial',
+            flip: {
+                x: true
+            },
+            colors: [
+                [0, '#ffaf10', .5],
+                [.27, '#fff', .1],
+                [.27, '#fff', .5],
+                [1, '#fff', 1]
+            ]
+        },
+        pattern: {
+            type: 'noise',
+            opacity: .5
+        }
+    })
+
+
+
+
+
+
+    // debug
+    const log = (...args) => document.querySelector('p').textContent = args.join(', ');
+
+    (() => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/iPad|iPhone|iPod/.test(userAgent)) return;
+        let a = 0, b = 0, g = 0;
+        setInterval(() => {
+            b -= .05;
+            g += .025;
+            const event = new CustomEvent('deviceorientation');
+            event.alpha = a;
+            event.beta = b;
+            event.gamma = g;
+            window.dispatchEvent(event);
+        }, 0);
+    })();
+    </script>
+
+</body>
+</html>
