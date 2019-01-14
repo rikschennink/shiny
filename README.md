@@ -6,9 +6,11 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 [![npm version](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
 [![Support on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
 
-**⚠️ Please note this library is still in development.**
+<img src="https://github.com/rikschennink/shiny/blob/master/demo.gif?raw=true" width="450" alt=""/>
 
 [Demo](https://rikschennink.github.io/shiny/) (use a mobile device, preferably iPhone at the moment)
+
+**⚠️ Please note this library is still in development.**
 
 ## Todo
 
