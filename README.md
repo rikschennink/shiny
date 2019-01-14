@@ -17,7 +17,8 @@ Visit https://rikschennink.github.io/shiny/ on a mobile device (preferably iPhon
 - Reset origin when browser session resumes
 - Test if correctly fails on older browsers
 - Test on Android
-
+- Document API
+- Add option to pass custom handler
 
 ## Usage
 
