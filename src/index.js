@@ -343,6 +343,7 @@ if (isBrowser()) {
 
         // register orientation changes
         window.addEventListener('deviceorientation', e => {
+            if (e.alpha === null) return;
             state.orientation.alpha = e.alpha;
             state.orientation.beta = e.beta;
             state.orientation.gamma = e.gamma;

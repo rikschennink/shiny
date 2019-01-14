@@ -1,13 +1,12 @@
 {
   "name": "@rikschennink/shiny",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simulating Reflections for Mobile Websites",
   "main": "dist/shiny.js",
   "umd:main": "dist/shiny.umd.js",
   "module": "dist/shiny.mjs",
   "source": "src/index.js",
   "scripts": {
-    "start": "parcel test/index.html --out-dir test/dist --global shiny",
     "build": "microbundle --name shiny"
   },
   "repository": {
@@ -22,7 +21,6 @@
   "license": "MIT",
   "devDependencies": {
     "microbundle": "^0.9.0",
-    "parcel-bundler": "^1.11.0",
     "sass": "^1.15.3"
   }
 }

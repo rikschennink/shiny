@@ -6,10 +6,9 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 [![npm version](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
 [![Support on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
 
-**Please note this library is still in development**
+**⚠️ Please note this library is still in development.**
 
 [Demo](https://rikschennink.github.io/shiny/) (use a mobile device, preferably iPhone at the moment)
-
 
 ## Todo
 
@@ -24,6 +23,9 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 
 ```html
 <div class="my-shiny-element">Hello World</div>
+
+<script src="shiny.umd.js"></script>
+
 <script>
 shiny('.my-shiny-element', {
     // type of shiny to render, 
@@ -31,9 +33,13 @@ shiny('.my-shiny-element', {
     type: 'background',
     gradient: {
         // type of gradient
+        // 'linear' or 'radial'
         type: 'radial',
 
-        // flip movement over axis
+        // angle of gradient when type is linear
+        angle: '110deg',
+
+        // flip axis movement
         flip: {
             x: true,
             y: false
@@ -54,3 +60,4 @@ shiny('.my-shiny-element', {
 });
 </script>
 ```
+
