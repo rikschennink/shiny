@@ -8,6 +8,8 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 
 **Please note this library is still in development**
 
+Visit https://rikschennink.github.io/shiny/ on a mobile device (preferably iPhone at the moment) for a demo.
+
 
 ## Todo
 
