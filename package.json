@@ -1,6 +1,6 @@
 {
   "name": "@rikschennink/shiny",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simulating Reflections for Mobile Websites",
   "main": "dist/shiny.js",
   "umd:main": "dist/shiny.umd.js",
@@ -10,7 +10,15 @@
     "start": "parcel test/index.html --out-dir test/dist --global shiny",
     "build": "microbundle --name shiny"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rikschennink/shiny.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rikschennink/shiny/issues"
+  },
+  "homepage": "https://github.com/rikschennink/shiny",
+  "author": "Rik Schennink <hello@rikschennink.nl> (http://rikschennink.nl/)",
   "license": "MIT",
   "devDependencies": {
     "microbundle": "^0.9.0",
