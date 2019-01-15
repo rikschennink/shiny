@@ -18,7 +18,7 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 - Fix landscape orientation rendering
 - Reset origin when browser session resumes
 - Test if correctly fails on older browsers
-- Test on Android
+- Test on Android (waiting for test devices)
 - Document API
 - Add option to pass custom handler
 
