@@ -2,6 +2,8 @@
 
 Add shiny reflections to **text**, **backgrounds**, and **borders** on devices that support the `DeviceMotion` event.
 
+**Please note this library is still in development**
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rikschennink/shiny/blob/gh-pages/LICENSE)
 [![Still in beta](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
 [![Less than 1kB](https://badgen.net/bundlephobia/minzip/shiny)](https://bundlephobia.com/result?p=shiny)
@@ -9,32 +11,63 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 
 <img src="https://github.com/rikschennink/shiny/blob/master/demo.gif?raw=true" width="450" alt=""/>
 
-[Demo](https://rikschennink.github.io/shiny/) (use a mobile device, preferably iPhone at the moment)
+[Demo](https://rikschennink.github.io/shiny/) 
 
-**Please note this library is still in development**
+*Use a mobile device, preferably iPhone in portrait mode at the moment*
+
 
 ## Todo
 
 - Fix landscape orientation rendering
-- Reset origin when browser session resumes
-- Test if correctly fails on older browsers
-- Test on Android (waiting for test devices)
-- Document API
+- Test on Android (waiting for test device to arrive)
 - Add option to pass custom handler
+
+
+## Installation
+
+Install from npm:
+
+```
+npm install @rikschennink/shiny --save
+```
+
+Or download `dist/shiny.umd.js` and include the script on your page like shown below.
+
+
+## API
+
+There's currently only one API call to make and it's `shiny()`. You can either pass a selector or an element (or array of elements), the second argument should be a configuration object telling Shiny how to render the special effects.
+
+```js
+shiny('.my-shiny-element', {
+    // config 
+});
+
+// or
+const node = document.querySelector('my-shiny-element');
+shiny(node, {
+    // config
+});
+```
+
 
 ## Usage
 
 ```html
+<!-- The element you want to make shiny -->
 <div class="my-shiny-element">Hello World</div>
 
+<!-- Include the library -->
 <script src="shiny.umd.js"></script>
 
+<!-- Initialize the SHINYNESS -->
 <script>
 shiny('.my-shiny-element', {
     // type of shiny to render, 
     // 'background', 'border', or 'text'
     type: 'background',
     gradient: {
+
         // type of gradient
         // 'linear' or 'radial'
         type: 'radial',
@@ -51,13 +84,16 @@ shiny('.my-shiny-element', {
         // colors to use
         colors: [
             // offset, color, opacity
-            [0, '#fff', 1],
-            [1, '#fff', 0],
+            // ! don't pass rgba or hsla colors, supply the opacity seperatly
+            [0, '#fff', 1], // white at 0%
+            [1, '#fff', 0], // to fully transparent white at 100%
         ]
+
     },
+
     // optional pattern fill
     pattern: {
-        type: 'noise',
+        type: 'noise', // only 'noise' for now
         opacity: .5
     }
 });
