@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    
+    <style>
+    html {
+        background:#000;
+        color:#fff;
+    }
+
+    .dot {
+        position: fixed;
+        left: calc(50% - 10px);
+        top: calc(50% - 10px);
+        width:20px;
+        height:20px;
+        background:#fff;
+    }
+
+    .log {
+        display:flex;
+    }
+
+    .log span {
+        margin:0.5em;
+    }
+
+    </style>
+</head>
+<body>
+
+    <p class="log"></p>
+
+    <div class="dot"></div>
+    
+    <script>
+        function log() {
+            p.innerHTML = [].slice.call(arguments).map(function(arg) { return typeof arg === 'number' ? arg.toFixed(3) : arg}).map(function(v) { return '<span>' + v  + '</span>'}).join('');
+        }
+        
+        var p = document.querySelector('.log');
+
+        var div = document.querySelector('.dot');
+
+        var PI_DIVIDED_BY_180 = Math.PI / 180;
+
+        var degToRad = function(degrees) { return degrees * PI_DIVIDED_BY_180 };
+
+        var state = {
+            origin: null,
+            center: {
+                x: 0,
+                y: 0,
+                z: 300
+            }
+        };
+
+        window.addEventListener('deviceorientation', function(e) {
+
+            log(e.alpha, e.beta, e.gamma);
+
+            if (!(e.beta && e.gamma)) return;
+
+            const orientation = {
+                alpha: e.alpha,
+                beta: e.beta,
+                gamma: e.gamma
+            }
+
+            if (state.origin === null) {
+                state.origin = Object.assign({}, orientation);
+            }
+
+            var alpha = state.origin.alpha - orientation.alpha;
+            var beta = state.origin.beta - orientation.beta;
+            var gamma = state.origin.gamma - orientation.gamma;
+            
+            var x = state.center.x;
+            var y = state.center.y;
+            var z = state.center.z;
+
+            x = x * Math.cos(-degToRad(alpha)) - y * Math.sin(-degToRad(alpha));
+            y = y * Math.cos(-degToRad(alpha)) + x * Math.sin(-degToRad(alpha));
+            y = y * Math.cos(-degToRad(beta))  - z * Math.sin(-degToRad(beta));
+            z = z * Math.cos(-degToRad(beta))  + y * Math.sin(-degToRad(beta));
+            z = z * Math.cos(-degToRad(gamma)) - x * Math.sin(-degToRad(gamma));
+            x = x * Math.cos(-degToRad(gamma)) + z * Math.sin(-degToRad(gamma));
+
+            div.style.transform = 'perspective(500px) translate3d(' + x + 'px,' + y + 'px,' + z + 'px)';
+
+        });
+    </script>
+
+</body>
+</html>
