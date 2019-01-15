@@ -73,7 +73,7 @@ if (isSupported()) {
 
         const { gradient = {}, pattern = {} } = props;
 
-        const steps = sanitizeGradient(gradient.colors || ['#fff', 'rgba(255,255,255,0)']);
+        const steps = sanitizeGradient(gradient.colors || [['#fff', 1], [.5, '#fff', 0]]);
 
         const flip = {
             x: gradient.flip && gradient.flip.x ? -1 : 1,
@@ -122,7 +122,7 @@ if (isSupported()) {
         wrapper.className = 'shiny--wrapper';
 
         // create effect overlay
-        let overlayStyles = 'position:absolute; pointer-events:none; user-select:none; background-attachment: fixed;';
+        let overlayStyles = 'position:absolute;pointer-events:none;user-select:none;background-attachment:fixed;';
         const overlay = document.createElement('span');
         const style = overlay.style;
 
@@ -133,21 +133,18 @@ if (isSupported()) {
             const borderBottomWidth = parseFloat(styles.borderBottomWidth);
             const borderTopLeftRadius = parseFloat(styles.borderTopLeftRadius);
             const backgroundColor = styles.backgroundColor;
-            overlayStyles += `
-            border-radius: ${ borderTopLeftRadius }px; 
-            left: ${ -borderLeftWidth }px;
-            top: ${ -borderTopWidth }px;
-            right: ${ -borderRightWidth }px;
-            bottom: ${ -borderBottomWidth }px;`
+            overlayStyles += `border-radius:${ borderTopLeftRadius }px;
+            left:${ -borderLeftWidth }px;
+            top:${ -borderTopWidth }px;
+            right:${ -borderRightWidth }px;
+            bottom:${ -borderBottomWidth }px;`
 
             const fill = document.createElement('div');
-            fill.style.cssText = `position:absolute; 
-            border-radius: ${ borderTopLeftRadius - borderLeftWidth }px; 
-            left: ${ borderLeftWidth }px;
-            top: ${ borderTopWidth }px;
-            right: ${ borderRightWidth }px;
-            bottom: ${ borderBottomWidth }px;
-            background-color: ${ backgroundColor }`;
+            fill.style.cssText = `position:absolute;border-radius:${ borderTopLeftRadius - borderLeftWidth }px;background-color: ${ backgroundColor } 
+            left:${ borderLeftWidth }px;
+            top:${ borderTopWidth }px;
+            right:${ borderRightWidth }px;
+            bottom:${ borderBottomWidth }px;`;
             overlay.appendChild(fill);
         }
         else if (type === 'background') {
@@ -156,7 +153,7 @@ if (isSupported()) {
         }
         else if (type === 'text') {
             overlay.innerHTML = element.innerHTML;
-            overlayStyles += `color:transparent; background-clip: text; -webkit-background-clip: text; -moz-background-clip: text;`;
+            overlayStyles += `color:transparent;background-clip:text;-webkit-background-clip:text;-moz-background-clip:text;`;
         }
         
         // add a pattern mask if needed
@@ -165,15 +162,12 @@ if (isSupported()) {
             overlayStyles += `mask: ${ mask }; -moz-mask: ${ mask }; -webkit-mask: ${ mask };`;
         }
 
-
         // apply styles to overlay
         style.cssText = overlayStyles;
-
 
         // append overlay to DOM
         wrapper.appendChild(overlay);
         element.insertAdjacentElement('afterbegin', wrapper);
-        
 
         // draw gradient based on 
         if (gradient.type === 'linear') {

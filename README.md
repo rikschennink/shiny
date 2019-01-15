@@ -36,18 +36,26 @@ Or download `dist/shiny.umd.js` and include the script on your page like shown b
 
 ## API
 
-There's currently only one API call to make and it's `shiny()`. You can either pass a selector or an element (or array of elements), the second argument should be a configuration object telling Shiny how to render the special effects.
+There's currently only one API call to make and it's `shiny()`. You can either pass a selector or an element (or array of elements), the second argument can be a configuration object telling Shiny how to render the special effects. 
+
+If the second argument is not supplied Shiny will render a radial background gradient with a white center and a transparant outer ring.
 
 ```js
-shiny('.my-shiny-element', {
-    // config 
-});
+// No config supplied, select element by class
+shiny('.my-shiny-element');
 
-// or
-const node = document.querySelector('my-shiny-element');
-shiny(node, {
-    // config
-});
+// Select multiple elements
+shiny('.my-shiny-element, #my-other-shiny-element');
+
+// Configuration object, see below for details
+shiny('.my-shiny-element', { /* config here */ });
+
+// Pass element object
+const myElement = document.querySelector('my-shiny-element');
+shiny(myElement, { /* config here */ });
+
+// Pass array of elements
+shiny([myElement, myOtherElement], { /* config here */ });
 ```
 
 
