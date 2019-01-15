@@ -3,9 +3,9 @@
 Add shiny reflections to **text**, **backgrounds**, and **borders** on devices that support the `DeviceMotion` event.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rikschennink/shiny/blob/gh-pages/LICENSE)
-[![npm version](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
-[![Support on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
-[![bundlephobia](https://badgen.net/bundlephobia/minzip/shiny)](https://bundlephobia.com/result?p=shiny)
+[![Still in beta](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
+[![Less than 1kB](https://badgen.net/bundlephobia/minzip/shiny)](https://bundlephobia.com/result?p=shiny)
+[![Support this project on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
 
 <img src="https://github.com/rikschennink/shiny/blob/master/demo.gif?raw=true" width="450" alt=""/>
 
