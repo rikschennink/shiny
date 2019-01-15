@@ -1,6 +1,6 @@
 {
   "name": "@rikschennink/shiny",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simulating Reflections for Mobile Websites",
   "main": "dist/shiny.js",
   "umd:main": "dist/shiny.umd.js",
