@@ -7,7 +7,8 @@
   "module": "dist/shiny.mjs",
   "source": "src/index.js",
   "scripts": {
-    "build": "microbundle --name shiny"
+    "start": "microbundle watch --target web --name shiny",
+    "build": "microbundle --target web --strict --name shiny"
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,11 @@
 const isBrowser = () => typeof window !== 'undefined' && typeof window.document !== 'undefined';
 const isNumber = v => typeof v === 'number';
 const isString = v => typeof v === 'string';
+const isSupported = () => isBrowser() && 'DeviceOrientationEvent' in window;
 
 let createShiny = () => {};
 
-if (isBrowser()) {
+if (isSupported()) {
     
     const STRENGTH = 300;
     const PI_DIVIDED_BY_180 = Math.PI / 180;
@@ -325,7 +326,7 @@ if (isBrowser()) {
         const viewportScaleFactor = viewport.width / viewport.height;
         const px = x / (STRENGTH * viewportScaleFactor);
         const py = y / (STRENGTH / viewportScaleFactor);
-
+        
         // reads
         state.drawers.forEach(drawer => drawer.read());
 
