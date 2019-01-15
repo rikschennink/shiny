@@ -342,6 +342,11 @@ if (isSupported()) {
 
     const init = () => {
 
+        // reset initial orientation when document is hidden/shown
+        document.addEventListener('visibilitychange', e => {
+            state.orientationInitial = null;
+        });
+
         // register orientation changes
         window.addEventListener('deviceorientation', e => {
             if (e.alpha === null) return;
