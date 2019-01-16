@@ -11,7 +11,7 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 
 <img src="https://github.com/rikschennink/shiny/blob/master/demo.gif?raw=true" width="450" alt=""/>
 
-[Demo](https://rikschennink.github.io/shiny/) 
+[Demo](https://pqina.nl/shiny/) 
 
 *Use a mobile device, preferably iPhone in portrait mode at the moment*
 
