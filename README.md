@@ -35,7 +35,7 @@ Or download `dist/shiny.umd.js` and include the script on your page like shown b
 
 There's currently only one API call to make and it's `shiny()`. You can either pass a selector or an element (or array of elements), the second argument can be a configuration object telling Shiny how to render the special effects. 
 
-If the second argument is not supplied Shiny will render a radial background gradient with a white center and a transparant outer ring.
+If the second argument is not supplied Shiny will render a radial background gradient with a white center and a transparent outer ring.
 
 ```js
 // No config supplied, select element by class
@@ -89,7 +89,7 @@ shiny('.my-shiny-element', {
         // colors to use
         colors: [
             // offset, color, opacity
-            // ! don't pass rgba or hsla colors, supply the opacity seperatly
+            // ! don't pass rgba or hsla colors, supply the opacity seperately
             [0, '#fff', 1], // white at 0%
             [1, '#fff', 0], // to fully transparent white at 100%
         ]
