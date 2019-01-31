@@ -7,6 +7,8 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 [![Less than 1kB](https://badgen.net/bundlephobia/minzip/shiny)](https://bundlephobia.com/result?p=shiny)
 [![Support this project on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
 
+**Looks like iOS 12.2 will [disable use of device sensors](https://twitter.com/rikschennink/status/1090912464403861504) on Safari**
+
 <img src="https://github.com/rikschennink/shiny/blob/master/demo.gif?raw=true" width="450" alt=""/>
 
 [Demo](https://pqina.nl/shiny/) 
