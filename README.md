@@ -5,7 +5,6 @@ Add shiny reflections to **text**, **backgrounds**, and **borders** on devices t
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rikschennink/shiny/blob/gh-pages/LICENSE)
 [![Still in beta](https://badge.fury.io/js/%40rikschennink%2Fshiny.svg)](https://badge.fury.io/js/%40rikschennink%2Fshiny)
 [![Less than 1kB](https://badgen.net/bundlephobia/minzip/shiny)](https://bundlephobia.com/result?p=shiny)
-[![Support this project on Patreon](https://img.shields.io/badge/support-patreon-salmon.svg)](https://www.patreon.com/rikschennink)
 
 **⚠️ It looks like iOS 12.2 will [disable use of device sensors](https://twitter.com/rikschennink/status/1090912464403861504) on Safari, so development of Shiny.js is on hold for now**
 
