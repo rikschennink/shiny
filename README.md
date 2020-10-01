@@ -105,4 +105,6 @@ shiny('.my-shiny-element', {
 });
 </script>
 ```
+Thank You
+Keep Updated with us!
 
